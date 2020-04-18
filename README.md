@@ -5,7 +5,7 @@
 Test application demonstrating how BackstopJS can be utilised in order to perform visual regression tests against an
 example application.
 
-BackstopJS was created and is maintained by (Garris Shipon)[https://github.com/garris]
+BackstopJS was created and is maintained by [Garris Shipon](https://github.com/garris)
 
 ## Getting the test app running
 
