@@ -11,8 +11,8 @@ BackstopJS was created and is maintained by [Garris Shipon](https://github.com/g
 
 ```
 $ cd visual-regression-demo
-$ npm
-$ npm run start
+$ yarn install
+$ yarn run start
 ```
 
 Navigate to `http://localhost:3000` or `http://localhost:3000?async` for async version
