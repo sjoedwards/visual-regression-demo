@@ -3,14 +3,15 @@ FROM node:15.6.0-alpine as build
 WORKDIR /app
 
 COPY package.json ./
-COPY package-lock.json ./
-COPY . ./
+COPY yarn.lock ./
 RUN yarn install
+COPY . ./
 RUN yarn build
-RUN rm -rf ./node_modules
 
 FROM node:15.6.0-alpine
-COPY --from=build ./build ./build
+WORKDIR /app
+COPY --from=build /app/build build
+COPY --from=build /app/package.json package.json
+COPY --from=build /app/yarn.lock yarn.lock
 RUN yarn install --production
 EXPOSE 3000
-CMD ["yarn", "serve"]
