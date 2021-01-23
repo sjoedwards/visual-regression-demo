@@ -1,8 +1,8 @@
-module.exports = [
+module.exports = (url) => [
   {
-    "label": "BackstopJS Homepage",
-    "url": "http://localhost:3000",
-    "misMatchThreshold" : 0.1,
-    "selectors": ["body"]
-  }
-]
+    label: "BackstopJS Homepage",
+    url: `${url}`,
+    misMatchThreshold: 0.1,
+    selectors: ["body"],
+  },
+];

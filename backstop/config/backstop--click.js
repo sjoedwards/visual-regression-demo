@@ -1,24 +1,25 @@
-const Scenarios = require('../scenarios/click');
+const Scenarios = require("../scenarios/click");
+const url = process.env.URL || "http://localhost:3000";
 
 module.exports = {
-  id: 'laceup_default',
+  id: "laceup_default",
   viewports: [
     {
-      label: 'default',
+      label: "default",
       width: 1920,
-      height: 1080
-    }
+      height: 1080,
+    },
   ],
 
-  scenarios: [...Scenarios],
+  scenarios: [...Scenarios(url)],
   paths: {
-    bitmaps_reference: 'backstop/reference',
-    bitmaps_test: 'backstop/results',
-    engine_scripts: 'backstop/engine_scripts',
-    html_report: 'backstop/html_report/click',
-    ci_report: 'backstop/ci_report'
+    bitmaps_reference: "backstop/reference",
+    bitmaps_test: "backstop/results",
+    engine_scripts: "backstop/engine_scripts",
+    html_report: "backstop/html_report/click",
+    ci_report: "backstop/ci_report",
   },
-  report: ['browser'],
-  engine: 'puppeteer',
-  "onReadyScript": "puppet/onReady.js",
+  report: ["browser"],
+  engine: "puppeteer",
+  onReadyScript: "puppet/onReady.js",
 };

@@ -4,7 +4,7 @@ report({
     {
       "pair": {
         "reference": "../../reference/laceup_default_BackstopJS_Homepage_0_body_0_default.png",
-        "test": "../../results/20200202-182235/laceup_default_BackstopJS_Homepage_0_body_0_default.png",
+        "test": "../../results/20210123-183529/laceup_default_BackstopJS_Homepage_0_body_0_default.png",
         "selector": "body",
         "fileName": "laceup_default_BackstopJS_Homepage_0_body_0_default.png",
         "label": "BackstopJS Homepage",
@@ -18,7 +18,8 @@ report({
             "width": 0,
             "height": 0
           },
-          "misMatchPercentage": "0.00"
+          "misMatchPercentage": "0.10",
+          "analysisTime": 89
         }
       },
       "status": "pass"
