@@ -10,7 +10,7 @@ BackstopJS was created and is maintained by [Garris Shipon](https://github.com/g
 ## Getting the test app running
 
 ```
-$ cd visual-regression-demo
+$ cd visual-regression-demo/laceup
 $ yarn install
 $ yarn run start
 ```
