@@ -1,11 +1,17 @@
-# name: docker-compose-actions-workflow
-# on: push
-# jobs:
-#   test:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: Build the stack
-#         run: docker-compose up -d
+name: Deploy
 
-# TODO Edit this so that it works with backstop
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.8.9
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "lace-up-sjoe"
+          heroku_email: "samuel.j.o.edwards@gmail.com"
