@@ -8,10 +8,5 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
-    command: yarn run serve -l 3000
-  backstop:
-    build:
-      image: backstopjs/backstopjs
-    command: yarn run backstop
 
 # TODO Add backstop configuration - pass in env var and run all the scenarios in CI
