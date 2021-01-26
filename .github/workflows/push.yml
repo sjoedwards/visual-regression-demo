@@ -15,8 +15,8 @@ jobs:
     steps:
       - name: Checking out our code
         uses: actions/checkout@master
-      # - name: Visual Regression Tests
-      #   run: backstop test --config backstop/config/backstop--basic-example.js
+      - name: Visual Regression Tests
+        run: backstop test --config backstop/config/backstop--basic-example.js
       - name: Move test results to tmp
         working-directory: backstop
         run: |
