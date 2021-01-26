@@ -1,0 +1,9 @@
+version: "2.3"
+services:
+  visual_regression_tests:
+    image: backstopjs/backstopjs
+    environment:
+      URL: https://lace-up-sjoe-staging.herokuapp.com/
+    volumes:
+      - ./backstop:/src/backstop
+    entrypoint: "backstop test --config backstop/config/backstop--ci.js"

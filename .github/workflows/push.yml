@@ -16,7 +16,7 @@ jobs:
       - name: Checking out our code
         uses: actions/checkout@master
       - name: Visual Regression Tests
-        run: backstop test --config backstop/config/backstop--basic-example.js
+        run: backstop test --config backstop/config/backstop--ci.js
       - name: Move test results to tmp
         if: always()
         working-directory: backstop
@@ -30,7 +30,6 @@ jobs:
           name: visual-regression-tests
           path: |
             backstop/tmp
-  # TODO save artifact here so it can be retrieved on the host
 
   build:
     runs-on: ubuntu-latest
