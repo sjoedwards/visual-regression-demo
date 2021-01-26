@@ -22,7 +22,7 @@ jobs:
         working-directory: backstop
         run: |
           ls -la
-          mkdir tmp
+          mkdir tmp tmp/reports
           mv -t tmp/reports html_report/basic-example
           mv -t tmp html_report/basic-example results reference
       - name: Archive Visual Regression Tests
