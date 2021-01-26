@@ -21,9 +21,8 @@ jobs:
         if: always()
         working-directory: backstop
         run: |
-          mkdir tmp tmp/reports
-          mv html_report tmp/reports
-          mv -t tmp results reference
+          mkdir tmp
+          mv -t tmp html_report results reference
       - name: Archive Visual Regression Tests
         if: always()
         uses: actions/upload-artifact@v2
