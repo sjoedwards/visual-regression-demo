@@ -9,6 +9,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Install Dependencies
+        working-directory: ./app
+        run: yarn
+      - name: Run linting
+        working-directory: ./app
+        run: yarn run lint
+      - name: Run unit tests
+        working-directory: ./app
+        env:
+          CI: true
+        run: yarn run test
       - uses: actions/checkout@v1
       - name: Login to Heroku Container registry
         env:
