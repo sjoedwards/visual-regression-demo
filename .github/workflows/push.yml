@@ -7,6 +7,7 @@ on:
 
 jobs:
   visual_regression:
+    runs-on: ubuntu-latest
     container:
       image: backstopjs/backstopjs
       env:
