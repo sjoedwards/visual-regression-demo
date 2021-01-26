@@ -18,6 +18,7 @@ jobs:
       - name: Visual Regression Tests
         run: backstop test --config backstop/config/backstop--basic-example.js
       - name: Move test results to tmp
+        if: always()
         working-directory: backstop
         run: |
           ls -la
