@@ -29,6 +29,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v2
         with:
+          name: visual-regression-tests
           path: |
             backstop/tmp
   # TODO save artifact here so it can be retrieved on the host
