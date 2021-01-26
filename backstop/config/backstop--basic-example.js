@@ -21,4 +21,7 @@ module.exports = {
   },
   report: ["browser"],
   engine: "puppeteer",
+  engineOptions: {
+    args: ["--no-sandbox"],
+  },
 };
