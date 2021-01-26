@@ -15,14 +15,20 @@ jobs:
     steps:
       - name: Checking out our code
         uses: actions/checkout@master
-      - name: Visual Regression Tests
-        run: backstop test --config backstop/config/backstop--basic-example.js
+      # - name: Visual Regression Tests
+      #   run: backstop test --config backstop/config/backstop--basic-example.js
+      - name: Move test results to tmp
+        working-directory: backstop
+        run: |
+          ls -la
+          mkdir tmp
+          mv -t tmp html_report/basic-example results reference
       - name: Archive Visual Regression Tests
         if: always()
         uses: actions/upload-artifact@v2
         with:
           path: |
-            backstop/html_report
+            backstop/tmp
   # TODO save artifact here so it can be retrieved on the host
 
   build:
