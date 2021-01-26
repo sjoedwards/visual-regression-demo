@@ -23,7 +23,7 @@ jobs:
         run: |
           mkdir tmp tmp/reports
           mv html_report tmp/reports
-          mv -t tmp html_report/basic-example results reference
+          mv -t tmp results reference
       - name: Archive Visual Regression Tests
         if: always()
         uses: actions/upload-artifact@v2
