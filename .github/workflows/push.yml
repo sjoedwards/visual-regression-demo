@@ -22,7 +22,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           path: |
-            html_report
+            backstop/html_report
   # TODO save artifact here so it can be retrieved on the host
 
   build:
