@@ -23,6 +23,7 @@ jobs:
         run: |
           ls -la
           mkdir tmp
+          mv -t tmp/reports html_report/basic-example
           mv -t tmp html_report/basic-example results reference
       - name: Archive Visual Regression Tests
         if: always()
