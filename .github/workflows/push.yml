@@ -62,12 +62,12 @@ jobs:
         working-directory: ./app
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: docker tag registry.heroku.com/${{ secrets.HEROKU_APP_NAME }}/web registry.heroku.com/${{ secrets.HEROKU_APP_NAME_PROD }}/web
+        run: docker tag registry.heroku.com/lace-up-sjoe-staging/web registry.heroku.com/lace-up-sjoe-prod/web
       - name: Push to prod docker registry
         working-directory: ./app
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: docker push registry.heroku.com/${{ secrets.HEROKU_APP_NAME_PROD }}/web
+        run: docker push registry.heroku.com/lace-up-sjoe-prod/web
       - name: Release to production
         working-directory: ./app
         env:
