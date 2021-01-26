@@ -6,8 +6,27 @@ on:
       - master
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Login to Heroku Container registry
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: heroku container:login
+      - name: Build and push
+        working-directory: ./app
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
+      - name: Release
+        working-directory: ./app
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
   visual_regression:
     runs-on: ubuntu-latest
+    needs: build
     container:
       image: backstopjs/backstopjs
       env:
@@ -30,23 +49,27 @@ jobs:
           name: visual-regression-tests
           path: |
             backstop/tmp
-
-  build:
-    runs-on: ubuntu-latest
+  deploy_prod:
     needs: visual_regression
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Login to Heroku Container registry
-      env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:login
-    - name: Build and push
-      working-directory: ./app
-      env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
-    - name: Release
-      working-directory: ./app
-      env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
+      - uses: actions/checkout@v1
+      - name: Login to Heroku Container registry
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: heroku container:login
+      - name: Retag image
+        working-directory: ./app
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: docker tag registry.heroku.com/${{ secrets.HEROKU_APP_NAME }}/web registry.heroku.com/${{ secrets.HEROKU_APP_NAME_PROD }}/web
+      - name: Push to prod docker registry
+        working-directory: ./app
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: docker push registry.heroku.com/${{ secrets.HEROKU_APP_NAME_PROD }}/web
+      - name: Release to production
+        working-directory: ./app
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME_PROD }} web
