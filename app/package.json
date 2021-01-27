@@ -18,6 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "test:vr": "backstop test --config backstop/config/backstop--basic-example.js",
     "lint": "eslint",
     "build": "react-scripts build",
     "test": "react-scripts test",
