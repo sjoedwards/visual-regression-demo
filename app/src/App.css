@@ -11,13 +11,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 1px;
 }
 
 .main {
   min-height: 750px;
   align-items: flex-start;
   padding-top: 20px;
-  max-width: 900px
+  max-width: 900px;
 }
 
 .App {
@@ -32,20 +33,20 @@ body {
 }
 
 .laceup__logo {
-  display: inline-block
+  display: inline-block;
 }
 
 .laceup__banner__container {
-  background:black;
+  background: black;
 }
 
 .test {
-  display:inline-flex
+  display: inline-flex;
 }
 
 .laceup__banner__text {
-  color:white;
-  font-family: 'Heebo', sans-serif;
+  color: white;
+  font-family: "Heebo", sans-serif;
   font-size: 40px;
   margin: 0 20px;
 }
@@ -78,7 +79,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height:100%;
+  height: 100%;
 }
 
 .laceup__search__search-box {
@@ -86,7 +87,7 @@ body {
 }
 
 .laceup__race-tile__image {
-  background-image: url('https://via.placeholder.com/150');
+  background-image: url("https://via.placeholder.com/150");
   background-size: cover;
   height: 75%;
 }
@@ -101,7 +102,7 @@ body {
 }
 
 .laceup__race-tile__title {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   text-align: left;
   font-size: 18px;
 }
@@ -122,7 +123,7 @@ body {
 
 .laceup__race-tile__metrics-icon {
   width: 20px;
-  margin-right: 5px
+  margin-right: 5px;
 }
 
 .laceup__search__search-box input {
@@ -158,10 +159,12 @@ body {
 }
 
 .laceup__footer__container {
-  font-size: 10px
+  font-size: 10px;
 }
 
-.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+.hvr-grow-shadow:hover,
+.hvr-grow-shadow:focus,
+.hvr-grow-shadow:active {
   box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
@@ -180,11 +183,11 @@ body {
   margin: none;
 }
 
-.ReactModal__Overlay--after-open{
+.ReactModal__Overlay--after-open {
   opacity: 1;
 }
 
-.ReactModal__Overlay--before-close{
+.ReactModal__Overlay--before-close {
   opacity: 0;
 }
 
@@ -196,26 +199,26 @@ body {
 }
 
 .laceup__modal__image {
-  background-image: url('https://via.placeholder.com/150');
+  background-image: url("https://via.placeholder.com/150");
   background-size: cover;
   height: 200px;
   width: 200px;
-  margin: 20px
+  margin: 20px;
 }
 
 .laceup__modal__metrics-container {
   color: white;
   min-width: 250px;
-  text-align:center;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  max-width: 300px
+  max-width: 300px;
 }
 .laceup__modal__title {
-  color:white;
-  font-family: 'Heebo', sans-serif;
+  color: white;
+  font-family: "Heebo", sans-serif;
   font-size: 30px;
   margin: 0 20px;
   text-align: center;
@@ -238,7 +241,7 @@ body {
 }
 
 .laceup__modal__description-title {
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
   font-size: 20px;
   padding-bottom: 10px;
 }
@@ -277,8 +280,7 @@ body {
   animation: draw--bottom 2s infinite;
 }
 
-
-@keyframes draw--bottom{
+@keyframes draw--bottom {
   0% {
     stroke-dashoffset: 30;
   }
@@ -290,11 +292,10 @@ body {
   }
   100% {
     stroke-dashoffset: 0;
-
   }
 }
 
-@keyframes draw--middle{
+@keyframes draw--middle {
   0% {
     stroke-dashoffset: 30;
   }
@@ -306,11 +307,10 @@ body {
   }
   100% {
     stroke-dashoffset: 0;
-
   }
 }
 
-@keyframes draw--top{
+@keyframes draw--top {
   0% {
     stroke-dashoffset: 30;
   }
@@ -322,6 +322,5 @@ body {
   }
   100% {
     stroke-dashoffset: 0;
-
   }
 }

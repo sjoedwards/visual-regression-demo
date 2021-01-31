@@ -3,6 +3,7 @@ import { render } from "@testing-library/react";
 import App from "./App";
 
 beforeEach(() => {
+  /* eslint-disable-next-line no-console */
   console.log = jest.fn();
 });
 

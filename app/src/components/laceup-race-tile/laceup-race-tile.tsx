@@ -1,19 +1,32 @@
-import React from 'react';
-import star from '../../star.svg'
-import incline from '../../incline.svg'
-import distance from '../../distance.svg'
-import LaceUpRaceTileImage from './lace-up-race-tile-image/lace-up-race-tile-image'
+import React from "react";
+import star from "../../star.svg";
+import incline from "../../incline.svg";
+import distance from "../../distance.svg";
+import LaceUpRaceTileImage from "./lace-up-race-tile-image/lace-up-race-tile-image";
+import { IRace } from "../../types";
 
-const LaceupRaceTile = props => {
+interface ILaceupRaceTile {
+  selectTile: (id: number) => void;
+  race: IRace;
+  id: number;
+}
+
+const LaceupRaceTile: React.FunctionComponent<ILaceupRaceTile> = ({
+  selectTile,
+  race,
+  id,
+}) => {
   return (
     <div className="laceup__grid-item--3 laceup__race-tile__wrapper">
       <div
-        onClick={() => props.selectTile(props.id)} id={`race-tile__${props.id}`}
+        role="presentation"
+        onClick={() => selectTile(id)}
+        id={`race-tile__${id}`}
         className="laceup__race-tile__container hvr-grow-shadow"
       >
-        <LaceUpRaceTileImage race={props.race} />
+        <LaceUpRaceTileImage race={race} />
         <div className="laceup__race-tile__info">
-          <p className="laceup__race-tile__title">{props?.race?.title}</p>
+          <p className="laceup__race-tile__title">{race?.title}</p>
           <div className="laceup__race-tile__metrics-container">
             <div className="laceup__race-tile__metrics-segment">
               <img
@@ -21,7 +34,7 @@ const LaceupRaceTile = props => {
                 src={distance}
                 alt="distance icon"
               />
-            <p>{props?.race?.distance?.short}</p>
+              <p>{race?.distance?.short}</p>
             </div>
             <div className="laceup__race-tile__metrics-segment">
               <img
@@ -29,7 +42,7 @@ const LaceupRaceTile = props => {
                 src={incline}
                 alt="incline icon"
               />
-              <p>{props?.race?.incline?.score}</p>
+              <p>{race?.incline?.score}</p>
             </div>
             <div className="laceup__race-tile__metrics-segment">
               <img
@@ -37,7 +50,7 @@ const LaceupRaceTile = props => {
                 src={star}
                 alt="star icon"
               />
-              <p>{props?.race?.overall?.score}</p>
+              <p>{race?.overall?.score}</p>
             </div>
           </div>
         </div>

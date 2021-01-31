@@ -1,7 +1,7 @@
-import React from 'react';
-import logo from '../../logo.svg';
+import React from "react";
+import logo, { ReactComponent } from "../../logo.svg";
 
-const LaceupBanner = () => {
+const LaceupBanner: React.FunctionComponent = () => {
   return (
     <div className="laceup__row laceup__banner__container">
       <div className="laceup__grid-item--2">
