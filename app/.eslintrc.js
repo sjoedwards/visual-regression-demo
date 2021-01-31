@@ -41,6 +41,7 @@ module.exports = {
           "**/*.test.js",
           "**/*.spec.js",
           "**/__test__/**/*.ts",
+          "**/setupTests.js",
         ],
       },
     ],
