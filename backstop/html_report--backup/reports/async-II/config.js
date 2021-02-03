@@ -4,7 +4,7 @@ report({
     {
       "pair": {
         "reference": "../../reference/laceup_default_BackstopJS_Homepage_--_Async_0_body_0_default.png",
-        "test": "../../results/20200202-182306/laceup_default_BackstopJS_Homepage_--_Async_0_body_0_default.png",
+        "test": "../../results/20210203-214503/laceup_default_BackstopJS_Homepage_--_Async_0_body_0_default.png",
         "selector": "body",
         "fileName": "laceup_default_BackstopJS_Homepage_--_Async_0_body_0_default.png",
         "label": "BackstopJS Homepage -- Async",
@@ -19,16 +19,16 @@ report({
             "height": 0
           },
           "misMatchPercentage": "26.11",
-          "analysisTime": 61
+          "analysisTime": 86
         },
-        "diffImage": "../../results/20200202-182306/failed_diff_laceup_default_BackstopJS_Homepage_--_Async_0_body_0_default.png"
+        "diffImage": "../../results/20210203-214503/failed_diff_laceup_default_BackstopJS_Homepage_--_Async_0_body_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "../../reference/laceup_default_BackstopJS_Homepage_--_Async_--_Delay_0_body_0_default.png",
-        "test": "../../results/20200202-182306/laceup_default_BackstopJS_Homepage_--_Async_--_Delay_0_body_0_default.png",
+        "test": "../../results/20210203-214503/laceup_default_BackstopJS_Homepage_--_Async_--_Delay_0_body_0_default.png",
         "selector": "body",
         "fileName": "laceup_default_BackstopJS_Homepage_--_Async_--_Delay_0_body_0_default.png",
         "label": "BackstopJS Homepage -- Async -- Delay",
@@ -43,16 +43,16 @@ report({
             "height": 0
           },
           "misMatchPercentage": "26.11",
-          "analysisTime": 61
+          "analysisTime": 86
         },
-        "diffImage": "../../results/20200202-182306/failed_diff_laceup_default_BackstopJS_Homepage_--_Async_--_Delay_0_body_0_default.png"
+        "diffImage": "../../results/20210203-214503/failed_diff_laceup_default_BackstopJS_Homepage_--_Async_--_Delay_0_body_0_default.png"
       },
       "status": "fail"
     },
     {
       "pair": {
         "reference": "../../reference/laceup_default_BackstopJS_Homepage_--_Async_--_Wait_for_Selector_0_body_0_default.png",
-        "test": "../../results/20200202-182306/laceup_default_BackstopJS_Homepage_--_Async_--_Wait_for_Selector_0_body_0_default.png",
+        "test": "../../results/20210203-214503/laceup_default_BackstopJS_Homepage_--_Async_--_Wait_for_Selector_0_body_0_default.png",
         "selector": "body",
         "fileName": "laceup_default_BackstopJS_Homepage_--_Async_--_Wait_for_Selector_0_body_0_default.png",
         "label": "BackstopJS Homepage -- Async -- Wait for Selector",

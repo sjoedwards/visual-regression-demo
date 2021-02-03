@@ -1,6 +1,6 @@
 module.exports = (url) => [
   {
-    label: "BackstopJS Homepage",
+    label: "BackstopJS Homepage -- No Click",
     url: `${url}`,
     misMatchThreshold: 0.1,
     selectors: ["body"],
